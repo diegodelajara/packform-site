@@ -1,13 +1,24 @@
 import Head from "next/head";
 import Header from "@/components/Header";
-import "../styles/Home.module.css";
 import Container from "@/components/Container";
 import Buttons from "@/components/Buttons";
 import Packform from "@/components/Packform/Packform";
+import Footer from "@/components/Footer";
+import { useState } from "react";
+import { FaUser } from "react-icons/fa";
+import useGetDimensions from "@/hooks/useGetDimensions";
+import { Homestyles } from "@/styles/Home.module";
 
 export default function Home() {
+  const { isDesktop } = useGetDimensions();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <>
+    <Homestyles isDesktop={isDesktop}>
       <Head>
         <title>An Intelligent Procurement Marketplace | Packform</title>
         <meta
@@ -18,20 +29,58 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container">
-        <Header />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <Container
-          title="How we built USA’s largest distribution network"
+          isMenuOpen={isMenuOpen}
+          title={
+            <>
+              How we built USA’s largest distribution network
+              <h3>Without owning a single warehouse or a truck.</h3>
+            </>
+          }
           bgcolor={"#000"}
-          body={<h3>Without owning a single warehouse or a truck.</h3>}
+          body={
+            <aside>
+              {isDesktop ? (
+                <nav
+                  className={`menu ${isMenuOpen && !isDesktop ? "open" : ""}`}
+                >
+                  <ul>
+                    <li>
+                      <a href="#home">Customer catalog</a>
+                    </li>
+                    <li>
+                      <a href="#services">Team</a>
+                    </li>
+                    <li>
+                      <a href="#contact">Media</a>
+                    </li>
+                  </ul>
+                  <div className="buttons-container">
+                    <button>Sing up</button>
+                    <button>
+                      <FaUser size={15} color={"white"} /> Login
+                    </button>
+                  </div>
+                </nav>
+              ) : null}
+            </aside>
+          }
         />
-        <Container bgcolor={"#fff"} body={<Buttons />} />
         <Container
+          isMenuOpen={isMenuOpen}
+          bgcolor={"#fff"}
+          body={<Buttons />}
+        />
+        <Container
+          isMenuOpen={isMenuOpen}
           title="What is Packform?"
           bgcolor={"#fff"}
           textColor="#333"
           body={<Packform />}
         />
+        <Footer />
       </section>
-    </>
+    </Homestyles>
   );
 }
