@@ -22,8 +22,10 @@ export default function Container({
       textColor={textColor}
       isMenuOpen={isMenuOpen || false}
     >
-      {title && <h2>{title}</h2>}
-      {body}
+      <div>
+        {title}
+        {body}
+      </div>
     </Containerstyles>
   );
 }

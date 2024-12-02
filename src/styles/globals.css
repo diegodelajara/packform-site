@@ -3,7 +3,8 @@
   --foreground: #171717;
 } */
  :root {
-  --primary-lightest-color: #7989c7;
+    font-size: 10px;
+    --primary-lightest-color: #7989c7;
     --primary-lighter-color: #556bc6;
     --primary-light-color: #3653cc;
     --primary-color: #0045c6;
@@ -109,6 +110,14 @@
     --menu-active-bg-color: var(--secondary-bg-inverted);
     --btn-primary-hover-plain-background: var(--btn-outline-hover-background-color);
     --text-underline-offset-base: 3px;
+    --btn-padding-x: 16px;
+    --layout-padding: var(--content-spacing);
+    --success-dark-color: #048321;
+    --secondary-darker-color: #9e4f00;
+    --btn-active-hover-background-color: var(--active-dark-color);
+    --btn-secondary-hover-background-color: var(--secondary-darker-color);
+    --btn-success-hover-background-color: var(--success-dark-color);
+    --btn-primary-hover-background-color: var(--primary-dark-color);
  }
 
 @media (prefers-color-scheme: dark) {
@@ -123,12 +132,15 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   color: white;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

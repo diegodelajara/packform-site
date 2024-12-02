@@ -7,6 +7,7 @@ export default function Divider() {
         borderBottom: "var(--border-base)",
         width: "100%",
         display: "block",
+        marginBottom: "calc(var( --gutter) * 2)",
       }}
     ></span>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import breakpoints from '../utils/responsive'
+import {breakpoints} from '../utils/responsive'
 
 export default function useGetDimensions() {
   const [windowWidth, setWindowWidth] = useState(0)

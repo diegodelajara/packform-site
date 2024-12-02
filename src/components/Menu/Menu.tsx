@@ -3,6 +3,7 @@ import { FaBars, FaUser } from "react-icons/fa";
 import { Menustyles } from "./Menu.style";
 import { FaX } from "react-icons/fa6";
 import useGetDimensions from "@/hooks/useGetDimensions";
+import { breakpoints } from "@/utils/responsive";
 
 type MenuProps = {
   isMenuOpen: boolean;
@@ -12,7 +13,7 @@ type MenuProps = {
 export default function Menu({ isMenuOpen, toggleMenu }: MenuProps) {
   const { isDesktop } = useGetDimensions();
   return (
-    <Menustyles isDesktop={isDesktop}>
+    <Menustyles>
       {!isDesktop ? (
         <div className={`menu-handler ${isMenuOpen ? "open" : ""}`}>
           {isMenuOpen ? (
@@ -22,6 +23,25 @@ export default function Menu({ isMenuOpen, toggleMenu }: MenuProps) {
           )}
         </div>
       ) : null}
+      <nav className={`menu ${isMenuOpen && !isDesktop ? "open" : ""}`}>
+        <ul>
+          <li>
+            <a href="#home">Customer catalog</a>
+          </li>
+          <li>
+            <a href="#services">Team</a>
+          </li>
+          <li>
+            <a href="#contact">Media</a>
+          </li>
+        </ul>
+        <div className="buttons-container">
+          <button>Sing up</button>
+          <button>
+            <FaUser size={15} color={"white"} /> Login
+          </button>
+        </div>
+      </nav>
     </Menustyles>
   );
 }

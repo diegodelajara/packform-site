@@ -1,9 +1,8 @@
+import { breakpoints, breakpointsProps } from '@/utils/responsive'
 import styled from 'styled-components'
 
 
-export const Menustyles = styled.div<{
-  isDesktop: boolean
-}>`
+export const Menustyles = styled.div`
   .menu-handler.open {
     position:absolute;
     transition: transform 0.3s ease;
@@ -14,19 +13,19 @@ export const Menustyles = styled.div<{
   }
   nav {
     display: flex;
-    flex-direction: ${({ isDesktop }) =>  !isDesktop ? 'column': 'row'};
-    position: ${({ isDesktop }) =>  !isDesktop ? 'fixed': 'relative'};
+    flex-direction: column;
+    position: fixed;
     top:0;
-    height: ${({ isDesktop }) => !isDesktop ? '100vh': 'auto'};
+    height: 100vh;
     min-width: 280px;
     background-color: #000;
     padding: var(--content-spacing-sm);
     transition: transform 0.3s ease;
-    transform: ${({ isDesktop }) => !isDesktop ? 'translateX(100px)': 'translateX(0)'};
+    transform: translateX(100px);
     ul{
       list-style: none;
       display: flex;
-      flex-direction: ${({ isDesktop }) =>  !isDesktop ? 'column': 'row'};
+      flex-direction: column;
       gap: var(--gutter);
       li:last-child {
         padding-bottom: 20px;
@@ -40,7 +39,7 @@ export const Menustyles = styled.div<{
   }
   .buttons-container {
     display: flex;
-    flex-direction: ${({ isDesktop }) => !isDesktop ? 'column': 'row'};
+    flex-direction: column;
     gap: var(--gutter);
     button {
       display: flex;
@@ -62,5 +61,32 @@ export const Menustyles = styled.div<{
       gap: calc( var(--gutter) / 2);
     }
   }
-  `
   
+  @media (min-width: ${breakpoints.lg}px) {
+      nav {
+        flex-direction: row;
+        position: relative;
+        height: auto;
+        transform: translateX(0);
+        font-size: var(--font-size-co);
+        font-weight: 700;
+        padding: var(--content-spacing-sm) 0;
+        ul{
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          gap: var(--content-spacing);
+          li:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .buttons-container {
+         flex-direction: row;
+         padding-left: var(--content-spacing);
+         button {
+          padding: 0 var(--btn-padding-x);
+         }
+      }
+    }
+  `
