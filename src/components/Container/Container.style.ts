@@ -51,8 +51,10 @@ export const Containerstyles = styled.div<{
       }
 
       .map-container {
-        max-width: 786px;
-        min-width: 50%;
+        min-width: 60%;
+        & img {
+          max-width: 786px;
+        }
       }
      }
   `

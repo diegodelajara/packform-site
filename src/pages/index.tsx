@@ -11,6 +11,7 @@ import { breakpoints } from "@/utils/responsive";
 import GMap from "@/components/GoogleMap";
 import Footer from "@/components/Sections/Footer";
 import PackformFooter from "@/components/Sections/PackformFooter";
+import FloatingButton from "@/components/FloatingButton";
 
 export default function Home() {
   const { isDesktop } = useGetDimensions();
@@ -62,6 +63,7 @@ export default function Home() {
           body={<PackformFooter />}
         />
         <Footer />
+        <FloatingButton />
       </section>
     </Homestyles>
   );

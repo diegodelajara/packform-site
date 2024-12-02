@@ -11,66 +11,48 @@ const body: React.ReactNode = (
       <Logo />
     </div>
     <div className="packform">
-      <Container
-        title="Packform"
-        body={
-          <>
-            <Links links={["About us", "Team", "Media"]} />
-          </>
-        }
-        bgcolor={"#000"}
-      />
+      <section>
+        Packform
+        <Links links={["About us", "Team", "Media"]} />
+      </section>
     </div>
     <div className="spend-less">
-      <Container
-        title="Spend Less"
-        body={
-          <>
-            <Links links={["Customers", "Find Delearship"]} />
-          </>
-        }
-        bgcolor={"#000"}
-      />
+      <section>
+        Spend Less
+        <Links links={["Customers", "Find Delearship"]} />
+      </section>
     </div>
     <div className="earn-more">
-      <Container
-        title="Earn More"
-        body={
-          <>
-            <Links links={["Suppliers", "Dealers"]} />
-          </>
-        }
-        bgcolor={"#000"}
-      />
+      <section>
+        Earn More
+        <Links links={["Suppliers", "Dealers"]} />
+      </section>
     </div>
     <div className="follow-us">
-      <Container
-        title="Follow us"
-        body={
-          <>
-            <section>
-              <a href="#">
-                <FaInstagram />
-              </a>
-              <a href="#">
-                <FaLinkedin />
-              </a>
-              <a href="#">
-                <FaFacebook />
-              </a>
-              <a href="#">
-                <FaTwitter />
-              </a>
-            </section>
-            <ul>
-              <li>© 2024 Packform Pty Ltd</li>
-              <li>Privacy Policy</li>
-              <li>© 2024 Packform Pty Ltd</li>
-            </ul>
-          </>
-        }
-        bgcolor={"#000"}
-      />
+      <section>
+        Follow us
+        <div>
+          <a href="#">
+            <FaInstagram />
+          </a>
+          <a href="#">
+            <FaLinkedin />
+          </a>
+          <a href="#">
+            <FaFacebook />
+          </a>
+          <a href="#">
+            <FaTwitter />
+          </a>
+        </div>
+      </section>
+    </div>
+    <div className="privacy-text">
+      <ul>
+        <li>© 2024 Packform Pty Ltd</li>
+        <li>Privacy Policy</li>
+        <li>© 2024 Packform Pty Ltd</li>
+      </ul>
     </div>
   </Footerstyles>
 );
