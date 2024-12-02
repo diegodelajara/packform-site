@@ -5,6 +5,7 @@ import styled from 'styled-components'
 export const Homestyles = styled.div<{
   breakpoints: breakpointsProps
 }>`
+position: relative;
   .menu-handler.open {
     position:absolute;
     transition: transform 0.3s ease;
