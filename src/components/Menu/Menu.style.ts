@@ -1,4 +1,4 @@
-import { breakpoints, breakpointsProps } from '@/utils/responsive'
+import { breakpoints } from '@/utils/responsive'
 import styled from 'styled-components'
 
 

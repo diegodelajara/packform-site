@@ -4,8 +4,6 @@ import Container from "@/components/Container";
 import Buttons from "@/components/Sections/Buttons";
 import Packform from "@/components/Sections/Packform/Packform";
 import { useState } from "react";
-import { FaUser } from "react-icons/fa";
-import useGetDimensions from "@/hooks/useGetDimensions";
 import { Homestyles } from "@/styles/Home.style";
 import { breakpoints } from "@/utils/responsive";
 import GMap from "@/components/GoogleMap";
@@ -14,7 +12,6 @@ import PackformFooter from "@/components/Sections/PackformFooter";
 import FloatingButton from "@/components/FloatingButton";
 
 export default function Home() {
-  const { isDesktop } = useGetDimensions();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -22,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <Homestyles breakpoints={breakpoints}>
+    <Homestyles>
       <Head>
         <title>An Intelligent Procurement Marketplace | Packform</title>
         <meta

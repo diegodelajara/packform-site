@@ -3,7 +3,6 @@ import { FaBars, FaUser } from "react-icons/fa";
 import { Menustyles } from "./Menu.style";
 import { FaX } from "react-icons/fa6";
 import useGetDimensions from "@/hooks/useGetDimensions";
-import { breakpoints } from "@/utils/responsive";
 
 type MenuProps = {
   isMenuOpen: boolean;

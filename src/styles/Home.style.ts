@@ -2,9 +2,7 @@ import { breakpoints, breakpointsProps } from '@/utils/responsive'
 import styled from 'styled-components'
 
 
-export const Homestyles = styled.div<{
-  breakpoints: breakpointsProps
-}>`
+export const Homestyles = styled.div`
 position: relative;
   .menu-handler.open {
     position:absolute;
